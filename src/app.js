@@ -43,15 +43,13 @@ const mainSort = () => {
   document.querySelector("#bubleBtn").addEventListener("click", function() {
     document.querySelector("#cardSortContainer").innerHTML = "";
     bubbleSort(arrayVal, arraySym);
-    auxiliarVar = [];
-    auxilirSym = [];
+
   });
 
   document.querySelector("#selectBtn").addEventListener("click", function() {
     document.querySelector("#cardSortContainer").innerHTML = "";
     selectSort(arrayVal, arraySym);
-    auxiliarVar = [];
-    auxilirSym = [];
+
   });
 };
 
