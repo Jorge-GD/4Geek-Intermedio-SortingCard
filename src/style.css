@@ -1,1 +1,128 @@
-@import "~bootstrap/dist/css/bootstrap.min.css";
+body{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: greenyellow;
+    background-image: url("https://steamcdn-a.akamaihd.net/steamcommunity/public/images/items/554660/e49407d4966c2fdb9a737c9914957e5882b6b37b.jpg");
+
+}
+
+img{
+    display: flex;
+    width: 20%;
+    justify-content: center;
+
+}
+
+header{
+    display: flex;
+    justify-content: center;
+}
+
+.btn{
+    display: flex;
+    justify-content: center;
+    margin-top: 1%;
+
+}
+
+input{
+width: 190px;
+
+}
+#cardContainer{
+    display: grid;
+    width: 100%;
+    grid-gap: 20px;
+    margin-top: 30px;
+    grid-template-columns: repeat(5, 1fr);
+}
+
+#cardSortContainer{
+    display: grid;
+    width: 100%;
+    grid-gap: 20px;
+    margin-top: 30px;
+    grid-template-columns: repeat(5, 1fr);
+}
+
+.cardWrapper{
+    position: relative;
+    width: 100%;
+    padding-top: 150%;
+    
+}
+
+.card{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+    border-radius: 10px;
+    position: absolute;
+    top: 0;
+    background-color: white;
+    justify-content: space-between;
+    align-content: space-between;
+
+}
+
+.topCard{
+    display: flex;
+    padding-left: 10%;
+}
+
+.middleCard{
+    display: flex;
+    justify-content: center;
+}
+
+.bottomCard{
+    display: flex;
+    transform: rotate(180deg);
+    padding-left: 10%;
+}
+
+.middleNumber{
+    font-size: 300%;
+    
+}
+
+.cardHeart:after{
+    content: "\1F494";
+    color: red;
+    font-size: 300%;
+}
+
+.cardClub:after{
+    content: "\2667";
+    color: black;
+    font-size: 300%;
+}
+
+.cardDiamond:after{
+    content: "\2662";
+    color: red;
+    font-size: 300%;
+}
+
+.cardSpade:after{
+    content: "\2664";
+    color: black;
+    font-size: 300%;
+}   
+
+
+.line{
+    width:100%;
+    height: 47px;
+    border-bottom: 10px solid red;
+    
+}
+.ninja{
+    display: flex;
+    width:100%;
+    visibility: hidden;
+    color: red;
+}
