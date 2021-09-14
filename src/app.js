@@ -21,6 +21,7 @@ let cardSymb = ["Heart", "Club", "Spade", "Diamond"];
 
 const mainSort = () => {
   document.querySelector("#briefeBtn").addEventListener("click", function() {
+    document.querySelector(".ninja").style.visibility = "hidden";
     document.querySelector("#cardContainer").innerHTML = "";
     document.querySelector("#cardSortContainer").innerHTML = "";
     let cantidad = document.querySelector("#amountInput").value;
@@ -38,18 +39,19 @@ const mainSort = () => {
     }
     arrayVal = auxiliarVar;
     arraySym = auxilirSym;
+    auxiliarVar = [];
+    auxilirSym = [];
   });
 
   document.querySelector("#bubleBtn").addEventListener("click", function() {
     document.querySelector("#cardSortContainer").innerHTML = "";
+    console.log(arrayVal, arraySym);
     bubbleSort(arrayVal, arraySym);
-
   });
 
   document.querySelector("#selectBtn").addEventListener("click", function() {
     document.querySelector("#cardSortContainer").innerHTML = "";
     selectSort(arrayVal, arraySym);
-
   });
 };
 
@@ -69,14 +71,40 @@ function generateCard(value, icon) {
             </div>`;
 }
 
+function iterationCard(iteration) {
+  return `
+  <div class="cardWrapper">
+                <div class="initialCard">
+                    <div class="topCard">
+                    <span class="inlineIteration"   >iteration</span>
+                    </div>
+                    <div class="middleCard">
+                        <span class="middleIteration">${iteration}</span>
+                    </div>
+                    <div class="bottomCard">
+                    <span class="inlineIteration"  >iteration</span>
+                    </div>
+                </div>
+            </div>`;
+}
+
+function invisibleCard() {
+  return `
+  <div class="invisible">
+
+    </div>`;
+}
+
 const bubbleSort = (arr, arr2) => {
   document.querySelector(".ninja").style.visibility = "visible";
   let wall = arr.length - 1;
+  let aument = 0;
   while (wall > 0) {
     let index = 0;
     let index2 = 0;
     let aux = 0;
     let aux2 = 0;
+
     while (index < wall) {
       if (arr[index] > arr[index + 1]) {
         aux = arr[index];
@@ -89,13 +117,40 @@ const bubbleSort = (arr, arr2) => {
       index++;
       index2++;
     }
+
     wall--;
-  }
-  for (let i = 0; i < arr.length; i++) {
-    document.querySelector("#cardSortContainer").innerHTML += generateCard(
-      valueCard[arr[i]],
-      cardSymb[arr2[i]]
-    );
+    aument++;
+    if (wall > 0) {
+      document.querySelector("#cardSortContainer").innerHTML += iterationCard(
+        aument
+      );
+    } else {
+      document.querySelector("#cardSortContainer").innerHTML += iterationCard(
+        "final"
+      );
+    }
+
+    for (let i = 0; i < arr.length; i++) {
+      document.querySelector("#cardSortContainer").innerHTML += generateCard(
+        valueCard[arr[i]],
+        cardSymb[arr2[i]]
+      );
+    }
+    if (arr.length == 3) {
+      for (let i = 0; i < 1; i++) {
+        document.querySelector(
+          "#cardSortContainer"
+        ).innerHTML += invisibleCard();
+      }
+    } else if (arr.length > 4) {
+      let pepe = arr.length + 1;
+      pepe = 5 - ((pepe % 5) + 1);
+      for (let i = 0; i <= pepe; i++) {
+        document.querySelector(
+          "#cardSortContainer"
+        ).innerHTML += invisibleCard();
+      }
+    }
   }
 };
 
@@ -105,6 +160,7 @@ const selectSort = (arr, arr2) => {
   let min = 0;
   let aux = 0;
   let aux2 = 0;
+  let aument = 0;
   while (min < arr.length - 1) {
     for (let i = min + 1; i < arr.length; i++) {
       if (arr[min] > arr[i]) {
@@ -117,12 +173,38 @@ const selectSort = (arr, arr2) => {
       }
     }
     min++;
-  }
-  for (let i = 0; i < arr.length; i++) {
-    document.querySelector("#cardSortContainer").innerHTML += generateCard(
-      valueCard[arr[i]],
-      cardSymb[arr2[i]]
-    );
+    aument++;
+    if (min < arr.length - 1) {
+      document.querySelector("#cardSortContainer").innerHTML += iterationCard(
+        aument
+      );
+    } else {
+      document.querySelector("#cardSortContainer").innerHTML += iterationCard(
+        "final"
+      );
+    }
+
+    for (let i = 0; i < arr.length; i++) {
+      document.querySelector("#cardSortContainer").innerHTML += generateCard(
+        valueCard[arr[i]],
+        cardSymb[arr2[i]]
+      );
+    }
+    if (arr.length == 3) {
+      for (let i = 0; i < 1; i++) {
+        document.querySelector(
+          "#cardSortContainer"
+        ).innerHTML += invisibleCard();
+      }
+    } else if (arr.length > 4) {
+      let pepe = arr.length + 1;
+      pepe = 5 - ((pepe % 5) + 1);
+      for (let i = 0; i <= pepe; i++) {
+        document.querySelector(
+          "#cardSortContainer"
+        ).innerHTML += invisibleCard();
+      }
+    }
   }
 };
 

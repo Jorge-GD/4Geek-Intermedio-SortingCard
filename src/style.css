@@ -8,6 +8,12 @@ body{
 
 }
 
+.taladro{
+    color: red;
+    background-color: greenyellow;
+    align-content: center;
+}
+
 img{
     display: flex;
     width: 20%;
@@ -125,4 +131,39 @@ width: 190px;
     width:100%;
     visibility: hidden;
     color: red;
+}
+.invisible{
+    display: flex;
+    width:100%;
+    visibility: hidden;
+    color: red;
+}
+
+.inlineIteration{
+    padding-top: 5%;
+    color: white;
+    font-size: 200%;
+}
+
+.middleIteration{
+    font-size: 300%;
+
+}
+
+
+.initialCard{
+
+    background-image: url("http://www.titanui.com/wp-content/uploads/2013/01/Violet-Classical-Pattern-Background-1.jpg");
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+    border-radius: 10px;
+    position: absolute;
+    top: 0;
+    background-color: white;
+    justify-content: space-between;
+    align-content: space-between;
+    color: white;
+
 }
